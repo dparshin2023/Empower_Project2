@@ -29,14 +29,14 @@ jobs:
       - name: Set up NuGet
         uses: nuget/setup-nuget@v1.1.1      
       - name: NuGet restore solution
-        run: nuget restore "Empower_Project2.sln" -OutputDirectory ${{ github.workspace }}/packages
+        run: nuget restore "Project2.sln" -OutputDirectory ${{ github.workspace }}/packages
       - name: Deploy the artifact on the DataMiner System step
         uses: SkylineCommunications/Skyline-DataMiner-Deploy-Action@v1
         id: deploy_artifact_step
         with:
           api-key: ${{ secrets.DATAMINER_DEPLOY_KEY }}
-          solution-path: 'Empower_Project2.sln'
-          artifact-name: 'Empower_Project2'
+          solution-path: 'Project2.sln'
+          artifact-name: 'Project2'
           version: '1.0.1'
           timeout: '300'
           
